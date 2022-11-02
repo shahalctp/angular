@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { CreditcardComponent } from './creditcard/creditcard.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     DashboardComponent,
     NavbarComponent,
-    RegisterComponent
+    RegisterComponent,
+    CreditcardComponent
   ],
   imports: [
     BrowserModule,

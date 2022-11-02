@@ -1,0 +1,85 @@
+<p>creditcard works!</p>
+
+<div class="container col-md-12 mt-0">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Credit card</h3>
+
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="credcardfun()">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="uname" name="uname" placeholder="Name"
+                            id="cred_name" required>
+
+                    </div>
+
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="acno" name="acno"
+                            placeholder="account number" id="r=cred_accnum" required>
+                        <!-- <div style="color: yellow" *ngIf="(this.registerForm.get("acno")?.errors)&&(this.registerForm.get("acno")?.touched)">Invalid</div> -->
+                        <!-- <div style="color: yellow;" *ngIf="(this.registerForm.get('acno')?.errors)&&(this.registerForm.get('acno')?.touched)"> -->
+                        <!-- Invalid -->
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" class="form-control" [(ngModel)]="password" name="password"
+                            placeholder="password" id="cred_password" required>
+                    </div>
+
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="mobilenumber" name="mobilenumber"
+                            placeholder="Mobile number" id="cred_mobilenumber" required>
+                    </div>
+
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="pancard" name="pancard"
+                            placeholder="Pancard" id="cred_pancard" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Apply" class="btn float-right login_btn " style="width:50%">
+                    </div>
+                </form>
+            </div>
+            <!-- <p style="color:white;align-items:baseline;">already a user? <a href="">Login</a></p> -->
+        </div>
+    </div>
+</div>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr class="table-active">
+            <th scope="">Name</th>
+            <th scope="">Account number</th>
+            <th scope="">Password</th>
+            <th scope="">Mobile number</th>
+            <th scope="">Pancard</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="" *ngFor="let item of dummyarray">
+            <!-- <th scope="row">1</th> -->
+            <td class="">{{item.uname}}</td>
+            <td class="">{{item.acno}}</td>
+            <td class="">{{item.password}}</td>
+            <td class="">{{item.mobilenumber}}</td>
+            <td class="">{{item.pancard}}</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table> 
