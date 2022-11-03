@@ -10,10 +10,17 @@ export class NavbarComponent implements OnInit {
 Logout() {
 this.route.navigateByUrl('')
 }
+username:any
 
-  constructor(private route:Router) { }
+  constructor(private route:Router) { 
+    this.username=JSON.parse(localStorage.getItem("user")||"")
+  }
 
   ngOnInit(): void {
+  }
+  logout()
+  {
+    this.route.navigateByUrl
   }
 
 }

@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
   accno:any="Enter your Account no"
   pswd:any="Enter your Password"
   pswd1:any=""
-  accountnumber:any=0
+  accountnumber:any
+  username:any
   constructor(private route:Router,private db:AuthserviceService) { }
 
   ngOnInit(): void {
@@ -26,29 +27,39 @@ export class LoginComponent implements OnInit {
   {
     var acno:any=this.accountnumber
     var pswd:any=this.pswd1
-
-    if(acno in this.db.database)
+    if(this.db.serlogin(acno,pswd)==true)
     {
-      if(pswd==this.db.database[acno]["password"])
-      {
-        alert("Login Successfull")
-        this.route.navigateByUrl("dashboard")
-      }
-      else
-      {
-        alert("Incorrect Password")
-      }
-      
+      alert("Login success")
+      this.route.navigateByUrl("dashboard")
     }
     else
     {
-      alert("Not registered")
+      this.route.navigateByUrl("")
     }
+  }
+  //   if(acno in this.db.database)
+  //   {
+  //     if(pswd==this.db.database[acno]["password"])
+  //     {
+  //       alert("Login Successfull")
+        
+  //       this.route.navigateByUrl("dashboard")
+  //     }
+  //     else
+  //     {
+  //       alert("Incorrect Password")
+  //     }
+      
+  //   }
+  //   else
+  //   {
+  //     alert("Not registered")
+  //   }
 
   
   
-    // alert("Login Clicked")
-  }
+  //   // alert("Login Clicked")
+  
 
 //   acnochange(event:any)
 //   {
