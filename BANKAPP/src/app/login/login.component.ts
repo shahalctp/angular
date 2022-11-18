@@ -27,16 +27,36 @@ export class LoginComponent implements OnInit {
   {
     var acno:any=this.accountnumber
     var pswd:any=this.pswd1
-    if(this.db.serlogin(acno,pswd)==true)
-    {
-      alert("Login success")
-      this.route.navigateByUrl("dashboard")
-    }
-    else
-    {
-      this.route.navigateByUrl("")
-    }
-  }
+ 
+ this.db.login(acno,pswd)
+ .subscribe((result:any)=>{
+  console.log("kurip",result);
+  
+  console.log("result is",result);
+
+  alert(result.message)
+localStorage.setItem("currentacno",JSON.stringify(result.currentacno))
+localStorage.setItem("currentname",JSON.stringify(result.currentname))
+localStorage.setItem("token",JSON.stringify(result.token))
+this.route.navigateByUrl('dashboard')
+ }
+,(result:any)=>{
+  alert(result.error.message)
+
+})
+}
+
+ 
+    //   if(this.db.serlogin(acno,pswd)==true)
+  //   {
+  //     alert("Login success")
+  //     this.route.navigateByUrl("dashboard")
+  //   }
+  //   else
+  //   {
+  //     this.route.navigateByUrl("")
+  //   }
+  // }
   //   if(acno in this.db.database)
   //   {
   //     if(pswd==this.db.database[acno]["password"])

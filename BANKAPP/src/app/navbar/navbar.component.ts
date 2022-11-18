@@ -13,7 +13,7 @@ this.route.navigateByUrl('')
 username:any
 
   constructor(private route:Router) { 
-    this.username=JSON.parse(localStorage.getItem("user")||"")
+    this.username=JSON.parse(localStorage.getItem("currentname")||"")
   }
 
   ngOnInit(): void {
